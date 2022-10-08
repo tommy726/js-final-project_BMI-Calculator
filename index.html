@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BMI計算機，計算BMI並顯示狀態">
+    <meta property="og:title" content="BMI計算機">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BMI計算機">
+    <meta property="og:description" content="BMI計算機，計算BMI並顯示狀態">
+    <meta property="og:url" content="FB上的網址">
+    <meta property="og:image" content="FB上的圖片">
+    <title>BMI計算機</title>
+    <link rel="icon" type="image/png" href="images/bmi_icon.ico">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'/>
+</head>
+<body>
+    <div class="wrap">
+        <div class="calculator">
+            <h2><a href="#">BMI計算機</a></h2>
+            <div class="inputData">
+                <label for="height">身高 cm</label>
+                <input type="text" placeholder="請輸入身高" class="heightInput" id="height">
+                <label for="weight">體重 kg</label>
+                <input type="text" placeholder="請輸入體重" class="weightInput" id="weight">
+                <span class="warn"></span>
+            </div>
+            <div>
+                <div class="send">看結果</div>
+                <div class="levelCircle">
+                    <span class="result"></span>
+                    <span class="bmi">BMI</span>
+                    <a href="#" class="reset"><img src="images/icons_loop.png" alt="reset"></a>
+                </div>
+            </div>
+            <span class="levelResult"></span>
+        </div>
+        <div class="content">
+            <h3>BMI紀錄</h3>
+            <div class="bmiList"></div>
+            <button class="deleteAllBtn">全部刪除</button>
+        </div>
+        <div class="footer">
+            <h2><a href="#">BMI計算機</a></h2>
+        </div>
+    </div>
+    <script src="js/all.js"></script>
+</body>
+</html>
