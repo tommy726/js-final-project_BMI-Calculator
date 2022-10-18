@@ -34,7 +34,35 @@ function getData(e){
     let userColor = '';
     let marginRight = '';
     let BMI = (weightNum / ((heightNum/100)**2)).toFixed(2);
-    getBMI(BMI);
+    switch(true){
+        case (BMI <= 18.5):
+            userLevel = '過輕'
+            userColor = '#31baf9'
+            marginRight = '80px'
+        break;
+        case (18.5 < BMI && BMI <= 25):
+            userLevel = '理想'
+            userColor = '#86d73f'
+            marginRight = '80px'
+        break;
+        case (25 < BMI && BMI <= 30):
+            userLevel = '過重'
+            userColor = '#ff982d'
+            marginRight = '80px'
+        break;
+        case (30 < BMI && BMI <= 35):
+            userLevel = '輕度肥胖'
+            userColor = '#ff6c03'
+        break;
+        case (35 < BMI && BMI <= 40):
+            userLevel = '中度肥胖'
+            userColor = '#ff6c03'
+        break;
+        case (40 < BMI):
+            userLevel = '嚴重肥胖'
+            userColor = '#ff1200'
+        break;
+    };
     if (!heightNum || !weightNum){
         warn.textContent = '*請輸入正確的身高體重'
         reset();
@@ -57,30 +85,7 @@ function getData(e){
         send.style.display = 'none';
         ShowLevelCircle(data);
     };
-    function getBMI(BMI){
-        if (BMI <= 18.5){
-        userLevel = '過輕'
-        userColor = '#31baf9'
-        marginRight = '80px'
-    }else if(18.5 < BMI && BMI <= 25){
-        userLevel = '理想'
-        userColor = '#86d73f'
-        marginRight = '80px'
-    }else if(25 < BMI && BMI <= 30){
-        userLevel = '過重'
-        userColor = '#ff982d'
-        marginRight = '80px'
-    }else if(30 < BMI && BMI <= 35){
-        userLevel = '輕度肥胖'
-        userColor = '#ff6c03'
-    }else if(35 < BMI && BMI <= 40){
-        userLevel = '中度肥胖'
-        userColor = '#ff6c03'
-    }else{ 
-        userLevel = '嚴重肥胖'
-        userColor = '#ff1200'
-    };
-}};
+};
 
 function ShowLevelCircle(data){
     levelCircle.style.display = 'flex';
@@ -107,7 +112,7 @@ function updateList(data){
                     <a href="#" data-num="${i}" class="fa-solid fa-trash-can"></a>
                 </ul>`;
     };
-    bmiList.innerHTML =str;
+    bmiList.innerHTML = str;
 };
 
 function reset(e){
